@@ -2,6 +2,32 @@
 layout: default
 ---
 
-<section>
-    PORTFOLIO
+<section class="padded bg-green grid">
+    <div class="col-7">
+    <h2> We design beautiful websites</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod iusto corrupti aliquam quasi explicabo molestias obcaecati veritatis numquam laborum quia unde esse ducimus quos, nemo ut consequuntur cupiditate maxime.</p>
+</div>
+
+    {% for project in site.projects %}
+
+        <div class="col-7">
+            <div class="bg-image landscape" style="background-image: url('{{project.featured_image}}')">
+
+            </div>    
+
+        </div>
+
+        <div class="col-5-middle padded-2">
+        <h3> {{ project.title }} </h3>
+        <p> {{ project.description }} </p>
+        <p> Designed by {{ project.designed-by }} </p>
+        <p> Built by {{ project.build-by }} </p>
+        <a href="{{ project.live_url }}" class="button"> View Live site</a>
+
+    </div>
+
+    {% endfor %}
+
+
+
 </section>
